@@ -1,0 +1,40 @@
+body{
+    background-color: #f6f9ff;
+}
+.dropdown-menu {
+    border-radius: 4px;
+    padding: 10px 0;
+    animation-name: dropdown-animate;
+    animation-duration: 0.2s;
+    animation-fill-mode: both;
+    border: 0;
+    box-shadow: 0 5px 30px 0 rgba(82, 63, 105, 0.2);
+  }
+.navbarprofile{
+    background-color: rgba(228,90,61,0.9);
+
+    ul {
+        li {
+            a {
+                font-family: monospace;
+                font-size: 18.4px;
+                color: white;
+                
+            }
+        }
+    }
+   #submenu1, #submenu2, #submenu3{
+    a{
+        font-family: monospace;
+        font-size: 15.4px;
+        color: white;
+    }
+   }
+   #stats{
+    greyed{
+        color: grey;
+    }
+   }
+
+}
+

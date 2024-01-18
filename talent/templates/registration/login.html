@@ -1,0 +1,132 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+{% load static %}
+   
+<header class="text-center text-white d-flex masthead" style="background: url('{% static 'background.jpg' %}') center / cover no-repeat; height: 100vh;">
+    <div class="container my-auto">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <h1 class="text-uppercase"></h1>
+                <hr />
+                <section class="position-relative py-4 py-xl-5">
+                    <div class="container">
+                        <div class="row mb-5">
+                            <div class="col-md-8 col-xl-6 text-center mx-auto">
+                                <h2>No noise or delay</h2>
+                                <p class="w-lg-50">Curated database of specialists, experienced leaders and executives</p>
+                            </div>
+                        </div>
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-md-6 col-xl-4">
+                                
+                                <div class="card mb-5" style="--bs-body-bg: rgba(255,255,255,0.17);">
+                                    <div class="card-body d-flex flex-column align-items-center" style="color: rgb(33, 37, 41);">
+                                        <div class="bs-icon-xl bs-icon-circle bs-icon-primary bs-icon my-4"><svg class="bi bi-person" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16">
+                                                <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"></path>
+                                            </svg></div>
+                                        <form class="text-center" method="post" action="{% url 'login' %}">
+                                            {% csrf_token %}
+                                            <div class="mb-3"><input class="form-control" type="text" name="username" placeholder="Username" /></div>
+                                            <div class="mb-3"><input class="form-control" type="password" name="password" placeholder="Password" /></div>
+                                            <div class="mb-3"><button class="btn btn-primary d-block w-100" type="submit">Login</button></div>
+                                            <p class="text-muted"><a href="{% url 'password_reset' %}">Forgot your password?</a></p>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div class="col-lg-8 mx-auto">
+            <p class="text-faded mb-5">APEXLENSE is a curated database of specialists, experienced leaders and executives. </span><br /><span style="color: rgb(255, 255, 255);">We help experienced talent and hiring managers connect, without noise and delay.</span></p><a class="btn btn-primary btn-xl" role="button" href="#about">Find Out More</a>
+        </div>
+    </div>
+</header>
+<section id="about" class="bg-primary">
+    <div class="container">
+        <div class="row">
+            <div class="col offset-lg-8 text-center mx-auto">
+                <h2 class="text-white section-heading">Get hired faster!</h2>
+                <hr class="light my-4" />
+                <p class="text-faded mb-4" style="--bs-body-font-size: 70rem;font-size: 18.4px;">As you progress in your career, transitioning between roles tends to require more time than during your earlier stages. <br />To put it simply, there&#39;s a more limited pool of opportunities available compared to when you were at a junior level. <br /><br />APEXLENSE is extended to agencies, corporations, and hiring managers, offering a curated selection of candidates meticulously screened based on their experience, industry expertise, position in the value chain, specific skills, and unique personality traits.  All bundled up in an easy to access and use platform.<br /><br />Your membership is free, but not guaranteed. Your background has to show advanced level of industry knowledge and well developed skills, to be placed on the short-list. This step is a manual screening of your profile. Once you are selected, you are visible to all hiring managers.<br /><br /></p>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="services">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">The Process</h2>
+                <hr class="my-4" />
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-lg-3 text-center">
+                <div class="mx-auto service-box mt-5"><i class="fa fa-diamond fa-4x text-primary mb-3 sr-icons"></i>
+                    <h3 class="mb-3">Sign Up</h3>
+                    <p class="text-muted mb-0">Create a profile on APEXLENSE</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 text-center">
+                <div class="mx-auto service-box mt-5"><i class="fa fa-paper-plane fa-4x text-primary mb-3 sr-icons"></i>
+                    <h3 class="mb-3">Screening</h3>
+                    <h3 class="mb-3"></h3>
+                    <p class="text-muted mb-0">Our team will check your background to make sure you meet the minimum experience and knowledge requirements</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 text-center">
+                <div class="mx-auto service-box mt-5"><i class="fa fa-newspaper-o fa-4x text-primary mb-3 sr-icons"></i>
+                    <h3 class="mb-3">Anonymity</h3>
+                    <p class="text-muted mb-0">You stay anonymous until you decide to accept an invitation from a hiring manager. Each invitation comes with a detailed role prospectus</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 text-center">
+                <div class="mx-auto service-box mt-5"><i class="fa fa-heart fa-4x text-primary mb-3 sr-icons"></i>
+                    <h3 class="mb-3">Connect</h3>
+                    <p class="text-muted mb-0">If the role content and timing align with your preferences, go ahead, connect, and kickstart the process</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="portfolio" class="p-0">
+    <div class="container-fluid p-0">
+        <div class="row g-0 popup-gallery">
+            <div class="col-sm-6 col-lg-4"><a class="portfolio-box" href="fullsize/1.jpg"></a></div>
+            <div class="col-sm-6 col-lg-4"><a class="portfolio-box" href="fullsize/2.jpg"></a></div>
+            <div class="col-sm-6 col-lg-4"><a class="portfolio-box" href="fullsize/3.jpg"></a></div>
+        </div>
+    </div>
+</section>
+<section class="text-white bg-dark"></section>
+<section id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 text-center mx-auto">
+                <h2 class="section-heading">Let&#39;s Get In Touch!</h2>
+                <hr class="my-4" />
+                <p class="mb-5">Send us an email and we will get back to you as soon as possible!</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-xxl-12 text-center me-auto"><i class="fa fa-envelope-o fa-3x mb-3 sr-contact"></i>
+                <p><a href="mailto:your-email@your-domain.com">hello &#39;at&#39; apexlense.com</a></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+!-- Bootstrap core JS-->
+!
+!
+
+
+{% endblock content %}
+

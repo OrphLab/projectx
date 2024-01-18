@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Include Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <style>
+    .red-text {
+      color: red;
+    }
+
+    .grey-text {
+      color: grey;
+    }
+
+    /* Custom styles for vertical positioning */
+    body {
+      display: flex;
+      min-height: 100vh;
+      flex-direction: column;
+    }
+
+    .container {
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+  </style>
+  <title>Centered Content</title>
+</head>
+<body class="d-flex align-items-center">
+  <div class="container text-center mx-auto">
+    <div class="row">
+      <div class="col">
+        1 of 3
+      </div>
+      <div class="col-6">
+        <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+          <div class="progress-bar progress-bar-striped progress-bar-animated" id="bar" style="width: 25%"></div>
+        </div>
+      </div>
+      <div class="col">
+        3 of 3
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        1 of 3
+      </div>
+      <div class="col-5">
+        <p id="word1" class="red-text">Firasasst</p>
+        <p id="word2" class="grey-text">Second</p>
+        <p id="word3" class="grey-text">Third</p>
+        <button onclick="toggleColors()">Toggle Colors</button>
+      </div>
+      <div class="col">
+        3 of 3
+      </div>
+    </div>
+  </div>
+
+  <!-- Include Bootstrap JS (optional) -->
+
+
+  <script>
+    let currentIndex = 1;
+
+    function toggleColors() {
+
+        const currentWord = document.getElementById(`word${currentIndex}`);
+        const nextIndex = (currentIndex % 3) + 1;
+        const nextWord = document.getElementById(`word${nextIndex}`);
+
+        currentWord.classList.remove('red-text');
+        currentWord.classList.add('grey-text');
+
+        nextWord.classList.remove('grey-text');
+        nextWord.classList.add('red-text');
+
+        currentIndex = nextIndex;
+        const elBar = document.getElementById('bar');
+        elBar.style.width = `${currentIndex * 25}%`;
+    }
+  </script>
+</body>
+</html>
+
+
+
